@@ -25,7 +25,11 @@ export default function Profile() {
         <h1>Your Profile</h1>
 
         <Image
-          src={session.user.image}
+          src={
+            !session.user.image
+              ? "http://www.gravatar.com/avatar/?d=identicon"
+              : session.user.image
+          }
           alt="Upload your Avatar"
           width={100}
           height={100}
